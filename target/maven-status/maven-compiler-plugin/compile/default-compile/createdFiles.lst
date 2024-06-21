@@ -1,3 +1,14 @@
+ucr\ac\cr\proyecto2\controller\ControllerNewAccount.class
+ucr\ac\cr\proyecto2\view\GUILogin$1.class
+ucr\ac\cr\proyecto2\controller\exceptions\NonexistentEntityException.class
 ucr\ac\cr\proyecto2\model\TbUsuarios_.class
+ucr\ac\cr\proyecto2\view\TextPrompt.class
 ucr\ac\cr\proyecto2\model\TbUsuarios.class
+ucr\ac\cr\proyecto2\view\GUINewAccount$1.class
+ucr\ac\cr\proyecto2\controller\exceptions\PreexistingEntityException.class
+ucr\ac\cr\proyecto2\view\GUINewAccount.class
+ucr\ac\cr\proyecto2\view\GUILogin.class
+ucr\ac\cr\proyecto2\view\TextPrompt$Show.class
+ucr\ac\cr\proyecto2\controller\exceptions\IllegalOrphanException.class
 ucr\ac\cr\proyecto2\Proyecto2.class
+ucr\ac\cr\proyecto2\controller\TbUsuariosJpaController.class
