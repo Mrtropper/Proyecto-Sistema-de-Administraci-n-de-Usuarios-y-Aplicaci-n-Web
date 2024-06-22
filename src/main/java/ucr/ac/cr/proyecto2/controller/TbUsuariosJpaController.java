@@ -99,6 +99,18 @@ public class TbUsuariosJpaController implements Serializable {
     public List<TbUsuarios> findTbUsuariosEntities() {
         return findTbUsuariosEntities(true, -1, -1);
     }
+    private List<TbUsuarios> consultarLista() {
+        EntityManager em = getEntityManager();
+        try {
+            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+            cq.select(cq.from(TbUsuarios.class));
+            Query q = em.createQuery(cq);
+           
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
 
     public List<TbUsuarios> findTbUsuariosEntities(int maxResults, int firstResult) {
         return findTbUsuariosEntities(false, maxResults, firstResult);
@@ -140,6 +152,19 @@ public class TbUsuariosJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public String [][] getMatrix(){
+        String [][] data = new String[this.consultarLista().size()][TbUsuarios.ETIQUETA_USUARIOS.length];
+        
+        for(int i =0; i < data.length; i++){
+            for (int j = 0; j < data[0].length; j++) {
+                data[i][j] = this.consultarLista().get(i).data(j);
+                
+            }
+                   
+        }
+        return data;
     }
     
 }

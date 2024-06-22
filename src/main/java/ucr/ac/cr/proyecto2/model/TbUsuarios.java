@@ -33,6 +33,9 @@ public class TbUsuarios implements Serializable {
     @Basic(optional = false)
     @Column(name = "profile")
     private String profile;
+    
+    
+    public static final String [] ETIQUETA_USUARIOS={"Username","Password","Name", "Profile"};
 
     public TbUsuarios() {
     }
@@ -84,5 +87,16 @@ public class TbUsuarios implements Serializable {
     public String toString() {
         return "ucr.ac.cr.proyecto2.model.TbUsuarios[ username=" + username + " ]";
     }
+    
+    public String data(int columna){
+            switch(columna){
+                case 0: getUsername();
+                case 1: getPassword();
+                case 2: getName();
+                case 3: getProfile();
+                    
+            }
+            return null;
+        }
     
 }

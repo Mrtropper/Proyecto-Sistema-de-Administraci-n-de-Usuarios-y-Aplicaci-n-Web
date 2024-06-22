@@ -11,6 +11,7 @@ import java.awt.event.ItemListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ucr.ac.cr.proyecto2.model.TbUsuarios;
+import ucr.ac.cr.proyecto2.view.GUIAdminUser;
 import ucr.ac.cr.proyecto2.view.GUINewAccount;
 
 /**
@@ -26,8 +27,11 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
     public ControllerNewAccount(){
         newAccount = new GUINewAccount();
         jpaUsuarios = new TbUsuariosJpaController();
+        newAccount.setLocationRelativeTo(null);
+        newAccount.setVisible(true);
         
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
