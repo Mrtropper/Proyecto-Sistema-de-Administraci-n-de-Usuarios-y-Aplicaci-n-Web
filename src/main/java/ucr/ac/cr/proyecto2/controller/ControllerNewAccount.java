@@ -11,7 +11,6 @@ import java.awt.event.ItemListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ucr.ac.cr.proyecto2.model.TbUsuarios;
-import ucr.ac.cr.proyecto2.view.GUIAdminUser;
 import ucr.ac.cr.proyecto2.view.GUINewAccount;
 
 /**
@@ -26,6 +25,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
     
     public ControllerNewAccount(){
         newAccount = new GUINewAccount();
+        newAccount.listen(this);
         jpaUsuarios = new TbUsuariosJpaController();
         newAccount.setLocationRelativeTo(null);
         newAccount.setVisible(true);
@@ -43,7 +43,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
 
                         try {
                             TbUsuarios userTb = new TbUsuarios(newAccount.getTxtUsername(),
-                                    newAccount.getTxtUsername(),
+                                    newAccount.getTxtPassword(),
                                     newAccount.getTxtName(), "User");
                             
                             
@@ -67,7 +67,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
 
                                 try {
                                     TbUsuarios user = new TbUsuarios(newAccount.getTxtUsername(),
-                                            newAccount.getTxtUsername(),
+                                            newAccount.getTxtPassword(),
                                             newAccount.getTxtName(), "Admin");
                                     
                                     

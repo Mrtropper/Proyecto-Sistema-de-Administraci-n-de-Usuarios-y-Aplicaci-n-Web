@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import ucr.ac.cr.proyecto2.controller.ControllerNewAccount;
+import ucr.ac.cr.proyecto2.controller.TbUsuariosJpaController;
+import ucr.ac.cr.proyecto2.model.TbUsuarios;
 
 /**
  *
@@ -27,16 +29,29 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         TextPrompt placeHolderUsername = new TextPrompt("Username", txtUsernameNA);
         TextPrompt placeHolderPassword = new TextPrompt("Password", txtPasswordNA);
         TextPrompt placeHolderName = new TextPrompt("Name", txtNameNA);
-        TextPrompt placeHolderCode = new TextPrompt("Code", txtSPCode);
+       
+    }
+    
+    public void setData(TbUsuarios usuario){
+        
+        TextPrompt placeHolderPassword = new TextPrompt(usuario.getPassword(), txtPasswordNA);
+        TextPrompt placeHolderName = new TextPrompt(usuario.getName(), txtNameNA);
+        if(usuario.getProfile().equals("Admin")){
+            this.rbtnAdmin.setSelected(true);
+        } else{
+            this.rbtnUser.setSelected(true);
+        }
     }
     
    
     
     public void listen(ControllerNewAccount controller)
     {
-        this.btnCA.addActionListener(controller);
-        this.rbtnAdmin.addItemListener(controller);
-        this.rbtnUser.addItemListener(controller);
+        this.btDelete.addActionListener(controller);
+        this.btSearch.addActionListener(controller);
+        this.btModify.addActionListener(controller);
+        this.btAdd.addActionListener(controller);
+        
     }
      
     
@@ -56,10 +71,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
        return this.rbtnAdmin.toString();
     }
      
-    public void setTxtCodeEnabled(boolean control){
-        this.txtSPCode.setEnabled(control);
-    }//fin del metodo
-    
+ 
     public boolean txtIsEmptyUser(){
         if(this.txtPasswordNA.getText().isBlank() || this.txtUsernameNA.getText().isBlank()){
             return true;
@@ -67,12 +79,19 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         return false;
     }
     
-    public boolean txtSpCodeIsEmpty(){
-        if(this.txtSPCode.getText().isBlank()){
-            return true;
-        }
-        return false;
+    public void setUsuario(String usuario){
+        TbUsuariosJpaController jpaUsuarios = new TbUsuariosJpaController();
+        
+                if (jpaUsuarios.search(usuario) != null) {
+                    this.setData(jpaUsuarios.search(usuario));
+                } else {
+                    this.getMessage("No se encontro ningun usuario con el userName");
+                }
+
+           
     }
+    
+ 
 
     public void getMessage(String message){
         JOptionPane.showMessageDialog(null,message);
@@ -89,9 +108,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         return this.txtPasswordNA.getText();
     }
     
-    public String getTxtSpCode(){
-        return this.txtSPCode.getText();
-    }
+   
     
     
     
@@ -108,16 +125,17 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         rbtnUser = new javax.swing.JRadioButton();
         rbtnAdmin = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        btnCA = new javax.swing.JButton();
-        txtSPCode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtUsernameNA = new javax.swing.JTextField();
         txtPasswordNA = new javax.swing.JTextField();
         txtNameNA = new javax.swing.JTextField();
+        btDelete = new javax.swing.JButton();
+        btSearch = new javax.swing.JButton();
+        btClose = new javax.swing.JButton();
+        btModify = new javax.swing.JButton();
+        btAdd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -144,36 +162,13 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         rbtnAdmin.setText("Admin");
         jPanel1.add(rbtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUINewAccount/User_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 20, 20));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUINewAccount/Admin_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 20, 20));
-
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCA.setBackground(new java.awt.Color(153, 255, 204));
-        btnCA.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
-        btnCA.setForeground(new java.awt.Color(51, 51, 51));
-        btnCA.setText("Create account");
-        jPanel4.add(btnCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 143, -1));
-
-        txtSPCode.setBackground(new java.awt.Color(51, 51, 51));
-        txtSPCode.setForeground(new java.awt.Color(204, 204, 204));
-        txtSPCode.setEnabled(false);
-        txtSPCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSPCodeActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtSPCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 90, -1));
-
         jLabel2.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel2.setText("Create a new Account");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         txtUsernameNA.setBackground(new java.awt.Color(51, 51, 51));
@@ -190,6 +185,61 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         txtNameNA.setForeground(new java.awt.Color(204, 204, 204));
         txtNameNA.setText("Name");
         jPanel4.add(txtNameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, -1));
+
+        btDelete.setBackground(new java.awt.Color(204, 204, 204));
+        btDelete.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btDelete.setForeground(new java.awt.Color(51, 51, 51));
+        btDelete.setText("Delete");
+        btDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeleteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 80, -1));
+
+        btSearch.setBackground(new java.awt.Color(204, 204, 204));
+        btSearch.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btSearch.setForeground(new java.awt.Color(51, 51, 51));
+        btSearch.setText("Search");
+        btSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSearchActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 80, -1));
+
+        btClose.setBackground(new java.awt.Color(204, 204, 204));
+        btClose.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btClose.setForeground(new java.awt.Color(51, 51, 51));
+        btClose.setText("Close");
+        btClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCloseActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 70, -1));
+
+        btModify.setBackground(new java.awt.Color(204, 204, 204));
+        btModify.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btModify.setForeground(new java.awt.Color(51, 51, 51));
+        btModify.setText("Modify");
+        btModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btModifyActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 80, -1));
+
+        btAdd.setBackground(new java.awt.Color(204, 204, 204));
+        btAdd.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btAdd.setForeground(new java.awt.Color(51, 51, 51));
+        btAdd.setText("Add");
+        btAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAddActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -230,9 +280,25 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSPCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSPCodeActionPerformed
+    private void btCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btCloseActionPerformed
+
+    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSPCodeActionPerformed
+    }//GEN-LAST:event_btDeleteActionPerformed
+
+    private void btSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSearchActionPerformed
+
+    private void btModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btModifyActionPerformed
+
+    private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,11 +306,13 @@ public class GUIModifyAccount extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCA;
+    private javax.swing.JButton btAdd;
+    private javax.swing.JButton btClose;
+    private javax.swing.JButton btDelete;
+    private javax.swing.JButton btModify;
+    private javax.swing.JButton btSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -253,7 +321,6 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnUser;
     private javax.swing.JTextField txtNameNA;
     private javax.swing.JTextField txtPasswordNA;
-    private javax.swing.JTextField txtSPCode;
     private javax.swing.JTextField txtUsernameNA;
     // End of variables declaration//GEN-END:variables
 }

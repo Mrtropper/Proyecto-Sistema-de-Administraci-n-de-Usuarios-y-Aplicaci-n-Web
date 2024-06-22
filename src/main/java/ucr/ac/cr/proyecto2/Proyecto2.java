@@ -4,6 +4,8 @@
 
 package ucr.ac.cr.proyecto2;
 
+import ucr.ac.cr.proyecto2.controller.ControllerLogin;
+
 /**
  *
  * @author fabri
@@ -11,6 +13,6 @@ package ucr.ac.cr.proyecto2;
 public class Proyecto2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new ControllerLogin();
     }
 }

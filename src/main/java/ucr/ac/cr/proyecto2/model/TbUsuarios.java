@@ -90,10 +90,10 @@ public class TbUsuarios implements Serializable {
     
     public String data(int columna){
             switch(columna){
-                case 0: getUsername();
-                case 1: getPassword();
-                case 2: getName();
-                case 3: getProfile();
+                case 0: return getUsername();
+                case 1: return getPassword();
+                case 2: return getName();
+                case 3: return getProfile();
                     
             }
             return null;

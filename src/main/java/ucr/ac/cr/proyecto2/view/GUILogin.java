@@ -36,6 +36,13 @@ public class GUILogin extends javax.swing.JFrame {
         return this.txtPassword.getText();
     }
     
+    public boolean txtIsEmptyUser(){
+        if(this.txtUsername.getText().isBlank() || this.txtPassword.getText().isBlank()){
+            return true;
+        }
+        return false;
+    }
+    
     public boolean txtIsBlank(){
         if(txtPassword.getText().isBlank() || txtUsername.getText().isBlank()){
             return true;
@@ -58,7 +65,6 @@ public class GUILogin extends javax.swing.JFrame {
 
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
@@ -67,17 +73,12 @@ public class GUILogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/Login/logo.png"))); // NOI18N
 
         jLabel7.setText("jLabel7");
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/Login/usuario.png"))); // NOI18N
-        jLabel8.setText("jLabel8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -119,16 +120,15 @@ public class GUILogin extends javax.swing.JFrame {
         btnLogin.setForeground(new java.awt.Color(51, 51, 51));
         btnLogin.setText("Login  ");
         btnLogin.setActionCommand("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/Login/password_icon (Custom).png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 20, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUILogin/user_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUILogin/password_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/Login/user_icon (Custom).png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 20, 30));
@@ -146,6 +146,10 @@ public class GUILogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCreateAccountActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -154,15 +158,12 @@ public class GUILogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateAccount;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassword;

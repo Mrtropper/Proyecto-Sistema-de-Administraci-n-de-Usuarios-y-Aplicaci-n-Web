@@ -26,7 +26,7 @@ public class TbUsuariosJpaController implements Serializable {
     private EntityManagerFactory emf = null;
 
     public TbUsuariosJpaController() {
-        this.emf = Persistence.createEntityManagerFactory("sispePersistence");
+        this.emf = Persistence.createEntityManagerFactory("proyectoAuto");
     }
 
     public EntityManager getEntityManager() {
@@ -99,7 +99,7 @@ public class TbUsuariosJpaController implements Serializable {
     public List<TbUsuarios> findTbUsuariosEntities() {
         return findTbUsuariosEntities(true, -1, -1);
     }
-    private List<TbUsuarios> consultarLista() {
+    public List<TbUsuarios> consultarLista() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
@@ -166,5 +166,7 @@ public class TbUsuariosJpaController implements Serializable {
         }
         return data;
     }
+    
+    
     
 }

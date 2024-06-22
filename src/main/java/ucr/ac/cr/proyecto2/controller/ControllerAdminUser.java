@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import ucr.ac.cr.proyecto2.model.TbUsuarios;
 import ucr.ac.cr.proyecto2.view.GUIAdminUser;
+import ucr.ac.cr.proyecto2.view.GUIModifyAccount;
 import ucr.ac.cr.proyecto2.view.GUINewAccount;
 
 /**
@@ -20,7 +21,7 @@ public class ControllerAdminUser implements ActionListener, MouseListener {
 
     TbUsuariosJpaController jpaUsuarios;
     GUIAdminUser guiAdminUser;
-    GUINewAccount newAccount;
+    ControllerModifyAccount modifyAccount;
     public ControllerAdminUser(){
         jpaUsuarios = new TbUsuariosJpaController();
         guiAdminUser = new GUIAdminUser();
@@ -34,28 +35,19 @@ public class ControllerAdminUser implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()){
-            case"Add":
-                newAccount  = new GUINewAccount();
-                guiAdminUser.setDataTable(jpaUsuarios.getMatrix(), TbUsuarios.ETIQUETA_USUARIOS);// EJRM
+            case"Modify":
+                modifyAccount  = new ControllerModifyAccount();
+                modifyAccount.user(guiAdminUser.getSearch());
+                guiAdminUser.setDataTable(jpaUsuarios.getMatrix(), TbUsuarios.ETIQUETA_USUARIOS);
             break;
             
-            case"Modify":
-                if(guiSettings.getSelectRow() != -1){
-                    
-                    userArray.delete(guiSettings.getSearch());// EJRM
-                    userArray.searchAdmins(); 
-                    guiSettings.setDataTable(userArray.getMatrix(), User.TITTLE_USER);
-                    guiSettings.unSelectRow();
-                    
-                }else{
-                    guiSettings.getMessage("Error, you must select a user to delete");
-                }
-            break;
+            
         }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        guiAdminUser.setCode(guiAdminUser.getDataRow()[0]);
     }
 
     @Override

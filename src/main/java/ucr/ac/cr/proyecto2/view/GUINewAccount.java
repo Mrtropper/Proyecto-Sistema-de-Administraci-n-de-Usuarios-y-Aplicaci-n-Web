@@ -108,8 +108,6 @@ public class GUINewAccount extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         rbtnUser = new javax.swing.JRadioButton();
         rbtnAdmin = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnCA = new javax.swing.JButton();
@@ -144,12 +142,6 @@ public class GUINewAccount extends javax.swing.JFrame {
         rbtnAdmin.setText("Admin");
         jPanel1.add(rbtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUINewAccount/User_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 20, 20));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GUINewAccount/Admin_icon (Custom).png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 20, 20));
-
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,7 +155,6 @@ public class GUINewAccount extends javax.swing.JFrame {
 
         txtSPCode.setBackground(new java.awt.Color(51, 51, 51));
         txtSPCode.setForeground(new java.awt.Color(204, 204, 204));
-        txtSPCode.setEnabled(false);
         txtSPCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSPCodeActionPerformed(evt);
@@ -178,17 +169,14 @@ public class GUINewAccount extends javax.swing.JFrame {
 
         txtUsernameNA.setBackground(new java.awt.Color(51, 51, 51));
         txtUsernameNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsernameNA.setText("Username");
         jPanel4.add(txtUsernameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 160, -1));
 
         txtPasswordNA.setBackground(new java.awt.Color(51, 51, 51));
         txtPasswordNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtPasswordNA.setText("Password");
         jPanel4.add(txtPasswordNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 160, -1));
 
         txtNameNA.setBackground(new java.awt.Color(51, 51, 51));
         txtNameNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtNameNA.setText("Name");
         jPanel4.add(txtNameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -243,8 +231,6 @@ public class GUINewAccount extends javax.swing.JFrame {
     private javax.swing.JButton btnCA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
