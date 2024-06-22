@@ -18,5 +18,5 @@ try {
     die("Conexión fallida: " . $e->getMessage());
 }
 
-// Si llegas aquí, la conexión fue exitosa
+// Si llegas aquí, la conexión fue exitosa
 ?>
