@@ -1,0 +1,6 @@
+figure{
+    display: inline-block;
+    border: 2px solid #000;
+    padding: 10px;
+    background-color: rgba(128, 128, 128,0.327);
+}

@@ -30,11 +30,11 @@ if(isset($_GET['id'])){
         if($stmt->execute()){
             $_SESSION['message']="El auto fue actualizado correctamente";
             $_SESSION['type_message']="success";
-            header("Location: index.php");
+            header("Location: menuAdmin.php");
         }else{
             $_SESSION['message']="El auto no fue actualizado";
             $_SESSION['type_message']="error";
-            header("Location: index.php");
+            header("Location: menuAdmin.php");
         }
     }
     if(isset($_POST['actualizar_autos'])){

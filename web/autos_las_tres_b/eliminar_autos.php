@@ -11,11 +11,11 @@
         if($stmt->execute([$placa])){
             $_SESSION['message']="El auto fue eliminado con exito";
             $_SESSION['type_message']="success";
-            header("Location: principal.php");
+            header("Location: menuAdmin.php");
         }else{
             $_SESSION['message']="El auto no fue eliminado";
             $_SESSION['type_message']="error";
-            header("Location: principal.php");
+            header("Location: menuAdmin.php");
         }
     }
 ?>
