@@ -3,7 +3,7 @@ session_start(); // Iniciar sesión para guardar los datos por mensaje
 
 $servername = "localhost";
 $username = "root";
-$password = "if3000";
+$password = "fabricio0990";
 $dataname = "db_empresa_autos";
 
 try {
