@@ -2,40 +2,53 @@
 include 'db_conection.php';
 include 'includes/header.php';
 ?>
-<div class="col-md-8" style="font-family: 'Times New Roman', Times, serif;">
-            <table class="table table-bordered vertical-lines">
-                    <thead>
-                        <tr class="table-secondary">
+<body>
+    
+<div class="container mt-4">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Listado de Autos</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                        <tr>
                             <th>Placa</th>
                             <th>Marca</th>
                             <th>Modelo</th>
                             <th>Kilometraje</th>
-                            <th>Fecha(Año)</th>
-                            <th>Precio($)</th>
-                            <th>Funcionalidad</th>
+                            <th>Fecha (Año)</th>
+                            <th>Precio ($)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT * FROM tb_autos";
-                            $stmt=$pdo->query($sql);
-                            if($stmt->rowcount()>0){
-                                while($row = $stmt->fetch()){
-                        
+                        $sql = "SELECT * FROM tb_autos";
+                        $stmt = $pdo->query($sql);
+                        if ($stmt->rowCount() > 0) {
+                            while ($row = $stmt->fetch()) {
                         ?>
-                    <tr>
-                        <td><?php echo $row['placa'];?></td>
-                        <td><?php echo $row['marca'];?></td>
-                        <td><?php echo $row['modelo'];?></td>
-                        <td><?php echo $row['kilometraje'];?></td>
-                        <td><?php echo $row['fecha'];?></td>
-                        <td><?php echo $row['precio'];?></td>
-                        <td>
-                            <a href="actualizar_autos.php?id=<?php echo $row['placa'];?>" class="btn btn-secondary">Actualizar</a>
-                            <a href="eliminar_autos.php?id=<?php echo $row['placa'];?>" class="btn btn-danger">Eliminar</a>
-                        </td>                   
-                    </tr>
-                    <?php }} ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['placa']); ?></td>
+                            <td><?php echo htmlspecialchars($row['marca']); ?></td>
+                            <td><?php echo htmlspecialchars($row['modelo']); ?></td>
+                            <td><?php echo htmlspecialchars($row['kilometraje']); ?></td>
+                            <td><?php echo htmlspecialchars($row['fecha']); ?></td>
+                            <td><?php echo htmlspecialchars($row['precio']); ?></td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                        ?>
+                        <tr>
+                            <td colspan="6" class="text-center">No hay autos disponibles</td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
-            </table>
+                </table>
+            </div>
         </div>
+    </div>
+</div>
+</body>

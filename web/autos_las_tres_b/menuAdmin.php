@@ -2,11 +2,13 @@
 include 'db_conection.php';
 include 'includes/header.php';
 ?>
+
 <script>
     window.onload = function() {
         window.scrollTo(0, 0);
     }
 </script>
+<body>
     <section class="container p-3">
     <article class="row">
         <div class="container text-center">
@@ -15,7 +17,7 @@ include 'includes/header.php';
                     <img src="imagenes\logo_empresa.png" class="rounded mx-auto d-block" alt="Logo" height="400">
                 </div>
                 <div>
-                <a href="reportes\fpdf\PruebaV.php" target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i>Generar Reporte</a>
+                   <a href="menuUSS.php" target="_blank" class="btn btn-success">Generar Reporte</a>
                 </div>
                 
             </div>
@@ -196,3 +198,4 @@ include 'includes/header.php';
         </div>
     </article>
 </section>
+</body>

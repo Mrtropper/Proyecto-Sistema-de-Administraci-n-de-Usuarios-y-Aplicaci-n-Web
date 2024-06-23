@@ -17,11 +17,11 @@ function agregarAuto($placa, $marca, $modelo, $kilometraje, $fecha, $precio){
     if($stmt->execute()){
         $_SESSION['message']="El Auto fue guardado correctamente";
         $_SESSION['type_message']="success";
-        header("Location: index.php");
+        header("Location: menuAdmin.php");
     }else{
         $_SESSION['message']="El Auto no se pudo guardar";
         $_SESSION['type_message']="Error";
-        header("Location: index.php");
+        header("Location: menuAdmin.php");
     }
 }
 
