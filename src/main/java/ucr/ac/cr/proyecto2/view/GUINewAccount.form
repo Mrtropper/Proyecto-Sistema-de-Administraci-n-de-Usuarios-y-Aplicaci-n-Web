@@ -67,7 +67,7 @@
         <Component class="javax.swing.JButton" name="btClose">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="ff" red="99" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Constantia" size="14" style="1"/>
@@ -97,9 +97,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Corbel" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value=" Account type"/>
               </Properties>
               <Constraints>
@@ -116,9 +113,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Corbel" size="14" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="User"/>
               </Properties>
               <Constraints>
@@ -134,9 +128,6 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Corbel" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Admin"/>
               </Properties>
@@ -213,9 +204,6 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Corbel" size="18" style="1"/>
                         </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="0" type="rgb"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Create a new Account"/>
                       </Properties>
                       <Constraints>
@@ -272,7 +260,7 @@
                     <Component class="javax.swing.JButton" name="btnCA">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="ff" red="99" type="rgb"/>
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Constantia" size="14" style="1"/>

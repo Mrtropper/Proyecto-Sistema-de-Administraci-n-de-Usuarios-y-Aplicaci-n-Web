@@ -129,10 +129,10 @@ public class GUIAdminUser extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("Search:");
+        jLabel1.setText("Filter:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 61, 27));
 
-        jButton2.setBackground(new java.awt.Color(153, 255, 204));
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -152,11 +152,10 @@ public class GUIAdminUser extends javax.swing.JFrame {
         jLabel3.setText("Registered users");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        btModify.setBackground(new java.awt.Color(153, 255, 204));
+        btModify.setBackground(new java.awt.Color(204, 204, 204));
         btModify.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         btModify.setForeground(new java.awt.Color(51, 51, 51));
         btModify.setText("Modify");
-        btModify.setActionCommand("Modify");
         btModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btModifyActionPerformed(evt);
@@ -182,7 +181,7 @@ public class GUIAdminUser extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 150, 516, 180));
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -204,7 +203,7 @@ public class GUIAdminUser extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 580, 405));
 
-        jPanel3.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

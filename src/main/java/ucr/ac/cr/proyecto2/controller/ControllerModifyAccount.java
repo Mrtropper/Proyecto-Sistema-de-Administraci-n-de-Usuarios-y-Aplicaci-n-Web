@@ -115,7 +115,7 @@ public class ControllerModifyAccount implements ActionListener {
                         Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    modifyAccount.getMessage("No se ha digitado ningun nombre de usuario");
+                    modifyAccount.getMessage("No username has been entered");
                 }
 
                 break;
@@ -127,7 +127,7 @@ public class ControllerModifyAccount implements ActionListener {
                 if (jpaUsuarios.search(modifyAccount.getTxtUsername()) != null) {
                     modifyAccount.setData(jpaUsuarios.search(modifyAccount.getTxtUsername()));
                 } else {
-                    modifyAccount.getMessage("No se encontro ningun usuario con el userName");
+                    modifyAccount.getMessage("No user was found with the userName");
                 }
 
             } catch (Exception ex) {

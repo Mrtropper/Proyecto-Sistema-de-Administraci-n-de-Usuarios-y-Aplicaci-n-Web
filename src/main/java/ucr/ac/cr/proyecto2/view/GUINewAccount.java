@@ -126,7 +126,7 @@ public class GUINewAccount extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        btClose.setBackground(new java.awt.Color(153, 255, 204));
+        btClose.setBackground(new java.awt.Color(204, 204, 204));
         btClose.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         btClose.setForeground(new java.awt.Color(51, 51, 51));
         btClose.setText("Close");
@@ -140,19 +140,16 @@ public class GUINewAccount extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText(" Account type");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 100, -1));
 
         rbtnUser.setBackground(new java.awt.Color(255, 255, 255));
         rbtnUser.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        rbtnUser.setForeground(new java.awt.Color(0, 153, 153));
         rbtnUser.setText("User");
         jPanel1.add(rbtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
         rbtnAdmin.setBackground(new java.awt.Color(255, 255, 255));
         rbtnAdmin.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        rbtnAdmin.setForeground(new java.awt.Color(0, 153, 153));
         rbtnAdmin.setText("Admin");
         jPanel1.add(rbtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
@@ -171,7 +168,6 @@ public class GUINewAccount extends javax.swing.JFrame {
         jPanel4.add(txtSPCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("Create a new Account");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
@@ -187,7 +183,7 @@ public class GUINewAccount extends javax.swing.JFrame {
         txtNameNA.setForeground(new java.awt.Color(204, 204, 204));
         jPanel4.add(txtNameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, -1));
 
-        btnCA.setBackground(new java.awt.Color(153, 255, 204));
+        btnCA.setBackground(new java.awt.Color(204, 204, 204));
         btnCA.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         btnCA.setForeground(new java.awt.Color(51, 51, 51));
         btnCA.setText("Create account");
