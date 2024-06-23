@@ -25,15 +25,17 @@ public class ControllerModifyAccount implements ActionListener {
     TbUsuariosJpaController jpaUsuarios;
     TbUsuarios tbUsuarios;
     
-    public ControllerModifyAccount() {
+    public ControllerModifyAccount(String usuario) {
         modifyAccount = new GUIModifyAccount();
         jpaUsuarios = new TbUsuariosJpaController();
         modifyAccount.setLocationRelativeTo(null);
         modifyAccount.setVisible(true);
+        modifyAccount.listen(this);
+        modifyAccount.setUsuario(usuario);
 
     }
     public void user(String usuario){
-        modifyAccount.setUsuario(usuario);
+        
     }
 
     @Override
@@ -46,7 +48,8 @@ public class ControllerModifyAccount implements ActionListener {
                         try {
                             jpaUsuarios.add(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
-                                    modifyAccount.getTxtName(), "Admin"));
+                                    modifyAccount.getTxtName(), "User"));
+                            modifyAccount.getMessage("Admin was added correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -59,7 +62,8 @@ public class ControllerModifyAccount implements ActionListener {
                         try {
                             jpaUsuarios.add(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
-                                    modifyAccount.getTxtName(), "User"));
+                                    modifyAccount.getTxtName(), "Admin"));
+                            modifyAccount.getMessage("User was added correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -76,7 +80,8 @@ public class ControllerModifyAccount implements ActionListener {
                         try {
                             jpaUsuarios.edit(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
-                                    modifyAccount.getTxtName(), "Admin"));
+                                    modifyAccount.getTxtName(), "User"));
+                            modifyAccount.getMessage("The User was modified correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -89,7 +94,8 @@ public class ControllerModifyAccount implements ActionListener {
                         try {
                             jpaUsuarios.edit(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
-                                    modifyAccount.getTxtName(), "User"));
+                                    modifyAccount.getTxtName(), "Admin"));
+                            modifyAccount.getMessage("The Admin was modified correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -104,6 +110,7 @@ public class ControllerModifyAccount implements ActionListener {
                 if (!modifyAccount.getTxtUsername().isEmpty()) {
                     try {
                         jpaUsuarios.delete(modifyAccount.getTxtUsername());
+                        modifyAccount.getMessage("The User was delete correctly");
                     } catch (Exception ex) {
                         Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                     }

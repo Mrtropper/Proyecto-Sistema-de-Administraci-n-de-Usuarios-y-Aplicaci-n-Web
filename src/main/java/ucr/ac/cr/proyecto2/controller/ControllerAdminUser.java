@@ -36,11 +36,11 @@ public class ControllerAdminUser implements ActionListener, MouseListener {
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()){
             case"Modify":
-                modifyAccount  = new ControllerModifyAccount();
-                modifyAccount.user(guiAdminUser.getSearch());
+                modifyAccount  = new ControllerModifyAccount(guiAdminUser.getSearch());
+                guiAdminUser.dispose();
                 guiAdminUser.setDataTable(jpaUsuarios.getMatrix(), TbUsuarios.ETIQUETA_USUARIOS);
             break;
-            
+           
             
         }
     }

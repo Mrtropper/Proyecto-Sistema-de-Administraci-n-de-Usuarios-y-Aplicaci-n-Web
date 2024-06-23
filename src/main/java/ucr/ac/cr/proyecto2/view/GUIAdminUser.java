@@ -11,6 +11,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import ucr.ac.cr.proyecto2.controller.ControllerLogin;
 
 
 /**
@@ -223,6 +224,7 @@ public class GUIAdminUser extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
+        ControllerLogin login = new ControllerLogin();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtFilterUsersKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFilterUsersKeyReleased

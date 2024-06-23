@@ -7,6 +7,7 @@ package ucr.ac.cr.proyecto2.view;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import ucr.ac.cr.proyecto2.controller.ControllerLogin;
 import ucr.ac.cr.proyecto2.controller.ControllerNewAccount;
 
 /**
@@ -104,23 +105,36 @@ public class GUINewAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        btClose = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         rbtnUser = new javax.swing.JRadioButton();
         rbtnAdmin = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        btnCA = new javax.swing.JButton();
         txtSPCode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtUsernameNA = new javax.swing.JTextField();
         txtPasswordNA = new javax.swing.JTextField();
         txtNameNA = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        btnCA = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Create a new account");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        btClose.setBackground(new java.awt.Color(153, 255, 204));
+        btClose.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btClose.setForeground(new java.awt.Color(51, 51, 51));
+        btClose.setText("Close");
+        btClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCloseActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -146,12 +160,6 @@ public class GUINewAccount extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnCA.setBackground(new java.awt.Color(153, 255, 204));
-        btnCA.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
-        btnCA.setForeground(new java.awt.Color(51, 51, 51));
-        btnCA.setText("Create account");
-        jPanel4.add(btnCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 143, -1));
 
         txtSPCode.setBackground(new java.awt.Color(51, 51, 51));
         txtSPCode.setForeground(new java.awt.Color(204, 204, 204));
@@ -179,6 +187,12 @@ public class GUINewAccount extends javax.swing.JFrame {
         txtNameNA.setForeground(new java.awt.Color(204, 204, 204));
         jPanel4.add(txtNameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, -1));
 
+        btnCA.setBackground(new java.awt.Color(153, 255, 204));
+        btnCA.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
+        btnCA.setForeground(new java.awt.Color(51, 51, 51));
+        btnCA.setText("Create account");
+        jPanel4.add(btnCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 143, -1));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -198,19 +212,25 @@ public class GUINewAccount extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 310));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 290, 330));
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(btClose, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btClose)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 360));
@@ -222,12 +242,18 @@ public class GUINewAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSPCodeActionPerformed
 
+    private void btCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActionPerformed
+        this.dispose();
+        ControllerLogin login = new ControllerLogin();
+    }//GEN-LAST:event_btCloseActionPerformed
+
     /**
      * @param args the command line arguments
      */
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btClose;
     private javax.swing.JButton btnCA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

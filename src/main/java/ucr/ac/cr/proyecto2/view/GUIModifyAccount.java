@@ -7,6 +7,7 @@ package ucr.ac.cr.proyecto2.view;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import ucr.ac.cr.proyecto2.controller.ControllerAdminUser;
 import ucr.ac.cr.proyecto2.controller.ControllerNewAccount;
 import ucr.ac.cr.proyecto2.controller.TbUsuariosJpaController;
 import ucr.ac.cr.proyecto2.model.TbUsuarios;
@@ -33,9 +34,9 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     }
     
     public void setData(TbUsuarios usuario){
-        
-        TextPrompt placeHolderPassword = new TextPrompt(usuario.getPassword(), txtPasswordNA);
-        TextPrompt placeHolderName = new TextPrompt(usuario.getName(), txtNameNA);
+        txtUsernameNA.setText(usuario.getUsername());
+        txtPasswordNA.setText(usuario.getPassword());
+        txtNameNA.setText(usuario.getName());
         if(usuario.getProfile().equals("Admin")){
             this.rbtnAdmin.setSelected(true);
         } else{
@@ -45,7 +46,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     
    
     
-    public void listen(ControllerNewAccount controller)
+    public void listen(ActionListener controller)
     {
         this.btDelete.addActionListener(controller);
         this.btSearch.addActionListener(controller);
@@ -173,17 +174,19 @@ public class GUIModifyAccount extends javax.swing.JFrame {
 
         txtUsernameNA.setBackground(new java.awt.Color(51, 51, 51));
         txtUsernameNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtUsernameNA.setText("Username");
-        jPanel4.add(txtUsernameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 160, -1));
+        txtUsernameNA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameNAActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtUsernameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 160, 20));
 
         txtPasswordNA.setBackground(new java.awt.Color(51, 51, 51));
         txtPasswordNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtPasswordNA.setText("Password");
         jPanel4.add(txtPasswordNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 160, -1));
 
         txtNameNA.setBackground(new java.awt.Color(51, 51, 51));
         txtNameNA.setForeground(new java.awt.Color(204, 204, 204));
-        txtNameNA.setText("Name");
         jPanel4.add(txtNameNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, -1));
 
         btDelete.setBackground(new java.awt.Color(204, 204, 204));
@@ -195,7 +198,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
                 btDeleteActionPerformed(evt);
             }
         });
-        jPanel4.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 80, -1));
+        jPanel4.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 90, -1));
 
         btSearch.setBackground(new java.awt.Color(204, 204, 204));
         btSearch.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
@@ -206,7 +209,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
                 btSearchActionPerformed(evt);
             }
         });
-        jPanel4.add(btSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 80, -1));
+        jPanel4.add(btSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 90, -1));
 
         btClose.setBackground(new java.awt.Color(204, 204, 204));
         btClose.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
@@ -217,7 +220,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
                 btCloseActionPerformed(evt);
             }
         });
-        jPanel4.add(btClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 70, -1));
+        jPanel4.add(btClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 80, -1));
 
         btModify.setBackground(new java.awt.Color(204, 204, 204));
         btModify.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
@@ -228,7 +231,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
                 btModifyActionPerformed(evt);
             }
         });
-        jPanel4.add(btModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 80, -1));
+        jPanel4.add(btModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, -1));
 
         btAdd.setBackground(new java.awt.Color(204, 204, 204));
         btAdd.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
@@ -239,7 +242,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
                 btAddActionPerformed(evt);
             }
         });
-        jPanel4.add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, -1));
+        jPanel4.add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -282,6 +285,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
 
     private void btCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActionPerformed
         this.dispose();
+        ControllerAdminUser adminUser= new ControllerAdminUser();
     }//GEN-LAST:event_btCloseActionPerformed
 
     private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
@@ -299,6 +303,10 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     private void btAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btAddActionPerformed
+
+    private void txtUsernameNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameNAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameNAActionPerformed
 
     /**
      * @param args the command line arguments

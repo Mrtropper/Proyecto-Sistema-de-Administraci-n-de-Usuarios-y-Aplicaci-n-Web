@@ -22,6 +22,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
     GUINewAccount newAccount;
     TbUsuariosJpaController jpaUsuarios;
     TbUsuarios tbUsuarios;
+    ControllerLogin login;
     
     public ControllerNewAccount(){
         newAccount = new GUINewAccount();
@@ -37,6 +38,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()){
             case "Create account":
+                if(jpaUsuarios.search(newAccount.getTxtUsername()) ==null){
                 if(newAccount.getSelectrbUser()){
                     
                     if(validation()){
@@ -45,6 +47,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                             TbUsuarios userTb = new TbUsuarios(newAccount.getTxtUsername(),
                                     newAccount.getTxtPassword(),
                                     newAccount.getTxtName(), "User");
+                                    
                             
                             
                             
@@ -52,6 +55,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                             
                             jpaUsuarios.add(userTb);
                             newAccount.dispose();
+                            login = new ControllerLogin();
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerNewAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -74,6 +78,7 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                                     
                                     jpaUsuarios.add(user);
                                     newAccount.dispose();
+                                    login = new ControllerLogin();
                                 } catch (Exception ex) {
                                     Logger.getLogger(ControllerNewAccount.class.getName()).log(Level.SEVERE, null, ex);
                                 }
@@ -91,6 +96,10 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                     }
                 
                 }//fin del if para el caso en el que sea un usuario
+                
+                } else {
+                    newAccount.getMessage("A user with this username already exists");
+                }
                 
                 break;
         }

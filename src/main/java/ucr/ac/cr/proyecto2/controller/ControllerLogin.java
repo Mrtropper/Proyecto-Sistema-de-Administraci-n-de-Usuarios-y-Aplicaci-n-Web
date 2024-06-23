@@ -26,6 +26,7 @@ public class ControllerLogin implements ActionListener {
         login = new GUILogin();
         jpaUsuarios = new TbUsuariosJpaController();
         login.listen(this);
+        login.setLocationRelativeTo(null);
         login.setVisible(true);
     }
 
