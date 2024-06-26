@@ -37,7 +37,7 @@ public class ControllerLogin implements ActionListener {
                 if(validation()){
                     if(jpaUsuarios.search(login.getTxtUserName()) !=null){
                         if(jpaUsuarios.search(login.getTxtUserName()).getPassword().equals(login.getTxtPassword())){
-                            if(jpaUsuarios.search(login.getTxtUserName()).getProfile().equals("Admin")){
+                            if(jpaUsuarios.search(login.getTxtUserName()).getProfile().equals("AdminJava")){
                                 adminUser = new ControllerAdminUser();
                                 login.dispose();
                             } else{

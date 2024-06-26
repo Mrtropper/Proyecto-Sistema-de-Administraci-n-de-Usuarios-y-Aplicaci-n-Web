@@ -62,14 +62,25 @@ public class ControllerModifyAccount implements ActionListener {
                         try {
                             jpaUsuarios.add(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
-                                    modifyAccount.getTxtName(), "Admin"));
-                            modifyAccount.getMessage("User was added correctly");
+                                    modifyAccount.getTxtName(), "AdminJava"));
+                            modifyAccount.getMessage("Admin java was added correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }
 
                     }
 
+                } else if(modifyAccount.getSelectrbAdminWeb()){
+                    if (validation()){
+                        try {
+                            jpaUsuarios.add(new TbUsuarios(modifyAccount.getTxtUsername(),
+                                    modifyAccount.getTxtPassword(),
+                                    modifyAccount.getTxtName(), "AdminWeb"));
+                            modifyAccount.getMessage("Admin web was added correctly");
+                        } catch (Exception ex) {
+                            Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
                 }
 
                 break;
@@ -95,7 +106,22 @@ public class ControllerModifyAccount implements ActionListener {
                             jpaUsuarios.edit(new TbUsuarios(modifyAccount.getTxtUsername(),
                                     modifyAccount.getTxtPassword(),
                                     modifyAccount.getTxtName(), "Admin"));
-                            modifyAccount.getMessage("The Admin was modified correctly");
+                            modifyAccount.getMessage("The Admin java was modified correctly");
+                        } catch (Exception ex) {
+                            Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                    }
+
+                } else if (modifyAccount.getSelectrbAdminWeb()) {
+
+                    if (validation()) {
+
+                        try {
+                            jpaUsuarios.edit(new TbUsuarios(modifyAccount.getTxtUsername(),
+                                    modifyAccount.getTxtPassword(),
+                                    modifyAccount.getTxtName(), "AdminWeb"));
+                            modifyAccount.getMessage("The Admin web was modified correctly");
                         } catch (Exception ex) {
                             Logger.getLogger(ControllerModifyAccount.class.getName()).log(Level.SEVERE, null, ex);
                         }

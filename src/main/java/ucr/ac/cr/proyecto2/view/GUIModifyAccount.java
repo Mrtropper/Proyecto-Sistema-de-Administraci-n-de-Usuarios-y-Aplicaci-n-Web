@@ -26,6 +26,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(rbtnAdmin);
         buttonGroup.add(rbtnUser);
+        buttonGroup.add(rbtnAdminWeb);
         this.rbtnUser.setSelected(true);
         TextPrompt placeHolderUsername = new TextPrompt("Username", txtUsernameNA);
         TextPrompt placeHolderPassword = new TextPrompt("Password", txtPasswordNA);
@@ -37,10 +38,12 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         txtUsernameNA.setText(usuario.getUsername());
         txtPasswordNA.setText(usuario.getPassword());
         txtNameNA.setText(usuario.getName());
-        if(usuario.getProfile().equals("Admin")){
+        if(usuario.getProfile().equals("AdminJava")){
             this.rbtnAdmin.setSelected(true);
-        } else{
+        } else if(usuario.getProfile().equals("User")){
             this.rbtnUser.setSelected(true);
+        } else {
+            this.rbtnAdminWeb.setSelected(true);
         }
     }
     
@@ -53,6 +56,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         this.btModify.addActionListener(controller);
         this.btAdd.addActionListener(controller);
         
+        
     }
      
     
@@ -63,6 +67,10 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     public boolean getSelectrbAdmin(){
         return this.rbtnAdmin.isSelected();
     }
+    public boolean getSelectrbAdminWeb(){
+        return this.rbtnAdminWeb.isSelected();
+    }
+    
      
     public String getRbUser(){
       return this.rbtnUser.toString();
@@ -124,8 +132,6 @@ public class GUIModifyAccount extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        rbtnUser = new javax.swing.JRadioButton();
-        rbtnAdmin = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -137,6 +143,9 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         btClose = new javax.swing.JButton();
         btModify = new javax.swing.JButton();
         btAdd = new javax.swing.JButton();
+        rbtnAdmin = new javax.swing.JRadioButton();
+        rbtnAdminWeb = new javax.swing.JRadioButton();
+        rbtnUser = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -149,16 +158,6 @@ public class GUIModifyAccount extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         jLabel1.setText(" Account type");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 100, -1));
-
-        rbtnUser.setBackground(new java.awt.Color(255, 255, 255));
-        rbtnUser.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        rbtnUser.setText("User");
-        jPanel1.add(rbtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
-
-        rbtnAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        rbtnAdmin.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        rbtnAdmin.setText("Admin");
-        jPanel1.add(rbtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -240,6 +239,21 @@ public class GUIModifyAccount extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, -1));
+
+        rbtnAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        rbtnAdmin.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        rbtnAdmin.setText("Admin Java");
+        jPanel4.add(rbtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
+
+        rbtnAdminWeb.setBackground(new java.awt.Color(255, 255, 255));
+        rbtnAdminWeb.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        rbtnAdminWeb.setText("Admin Web");
+        jPanel4.add(rbtnAdminWeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+
+        rbtnUser.setBackground(new java.awt.Color(255, 255, 255));
+        rbtnUser.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        rbtnUser.setText("User");
+        jPanel4.add(rbtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -323,6 +337,7 @@ public class GUIModifyAccount extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton rbtnAdmin;
+    private javax.swing.JRadioButton rbtnAdminWeb;
     private javax.swing.JRadioButton rbtnUser;
     private javax.swing.JTextField txtNameNA;
     private javax.swing.JTextField txtPasswordNA;

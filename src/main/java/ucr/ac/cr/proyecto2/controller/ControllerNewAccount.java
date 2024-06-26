@@ -72,7 +72,39 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                                 try {
                                     TbUsuarios user = new TbUsuarios(newAccount.getTxtUsername(),
                                             newAccount.getTxtPassword(),
-                                            newAccount.getTxtName(), "Admin");
+                                            newAccount.getTxtName(), "AdminJava");
+                                    
+                                    
+                                    
+                                    jpaUsuarios.add(user);
+                                    newAccount.dispose();
+                                    login = new ControllerLogin();
+                                } catch (Exception ex) {
+                                    Logger.getLogger(ControllerNewAccount.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                                
+                                
+                                
+                            }else{
+                                newAccount.getMessage("invalid admin code");
+                            }
+                            
+                        }else{
+                            newAccount.getMessage("You must fill in all the spaces");
+                        }    
+                        
+                    }} else if(newAccount.getSelectrbAdminWeb()){
+                    
+                    if(validation()){
+                        
+                        if(newAccount.txtSpCodeIsEmpty() == false){
+                            
+                            if("if3000".equals(newAccount.getTxtSpCode())){
+
+                                try {
+                                    TbUsuarios user = new TbUsuarios(newAccount.getTxtUsername(),
+                                            newAccount.getTxtPassword(),
+                                            newAccount.getTxtName(), "AdminWeb");
                                     
                                     
                                     
@@ -95,15 +127,19 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
                         
                     }
                 
-                }//fin del if para el caso en el que sea un usuario
-                
                 } else {
                     newAccount.getMessage("A user with this username already exists");
                 }
                 
+                }//fin del if para el caso en el que sea un usuario
+                
+                
+                
                 break;
         }
+
     }
+
     public boolean validation(){
         if(newAccount.txtIsEmptyUser()){
             newAccount.getMessage("You must fill in all the spaces");
@@ -120,6 +156,12 @@ public class ControllerNewAccount implements ActionListener, ItemListener {
         }
         
         if(e.getSource().toString().equals(newAccount.getRbAdmin())){
+            
+            newAccount.setTxtCodeEnabled(true);
+            
+            
+        }
+         if(e.getSource().toString().equals(newAccount.getRbAdminWeb())){
             
             newAccount.setTxtCodeEnabled(true);
             
