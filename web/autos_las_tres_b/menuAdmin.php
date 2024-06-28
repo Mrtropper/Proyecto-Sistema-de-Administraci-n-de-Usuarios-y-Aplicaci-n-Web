@@ -17,7 +17,7 @@ include 'includes/header.php';
                     <img src="imagenes\logo_empresa.png" class="rounded mx-auto d-block" alt="Logo" height="400">
                 </div>
                 <div>
-                   <a href="menuUSS.php" target="_blank" class="btn btn-success">Generar Reporte</a>
+                   <a href="reporte.php" target="_blank" class="btn btn-success">Generar Reporte</a>
                 </div>
                 
             </div>

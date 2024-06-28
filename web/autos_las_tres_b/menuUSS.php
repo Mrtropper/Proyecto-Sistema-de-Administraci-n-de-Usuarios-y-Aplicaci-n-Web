@@ -9,11 +9,7 @@ include 'includes/header.php';
             <div class="row">
                 <div class="col">
                     <img src="imagenes\logo_empresa.png" class="rounded mx-auto d-block" alt="Logo" height="400">
-                </div>
-                <div>
-                   <a href="menuUSS.php" target="_blank" class="btn btn-success">Generar Reporte</a>
-                </div>
-                
+                </div>    
             </div>
         </div>
         <p style="font-family: 'Times New Roman', Times, serif;">Bienvenidos a nuestra tienda de Autos Triple B, donde pueden comprar todo tipo de autos, con cada marca y modelo con las que colaboramos. 

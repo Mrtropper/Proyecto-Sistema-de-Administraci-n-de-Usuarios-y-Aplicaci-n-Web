@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autos triple B</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
     <script src="https://kit.fontawesome.com/7c416d91d9.js" crossorigin="anonymous"></script>
 </head>
 <body>
