@@ -1,15 +1,15 @@
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\view\GUIAdminUser.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\view\GUIModifyAccount.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\Proyecto2.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\NonexistentEntityException.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\IllegalOrphanException.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\view\GUILogin.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerModifyAccount.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\PreexistingEntityException.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\TbUsuariosJpaController.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\view\TextPrompt.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\model\TbUsuarios.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\view\GUINewAccount.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerNewAccount.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerAdminUser.java
-C:\Users\lara3\OneDrive\Documents\visual\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web-main\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerLogin.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\PreexistingEntityException.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\model\TbUsuarios.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\view\GUIModifyAccount.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerAdminUser.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerModifyAccount.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\view\TextPrompt.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerLogin.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\NonexistentEntityException.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\ControllerNewAccount.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\TbUsuariosJpaController.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\view\GUINewAccount.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\controller\exceptions\IllegalOrphanException.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\Proyecto2.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\view\GUIAdminUser.java
+C:\Users\lara3\OneDrive\Documents\visual\pagina web\Proyecto-Sistema-de-Administracion-de-Usuarios-y-Aplicacion-Web\src\main\java\ucr\ac\cr\proyecto2\view\GUILogin.java
