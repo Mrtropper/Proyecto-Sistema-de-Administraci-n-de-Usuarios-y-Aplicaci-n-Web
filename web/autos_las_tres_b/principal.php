@@ -18,7 +18,7 @@ include 'includes/header.php';
             $uss=$stmt->fetch(PDO::FETCH_ASSOC);
             if ($uss['password'] == $password) {
             
-                if ($uss['profile'] =="Admin") {
+                if ($uss['profile'] =="AdminWeb") {
                     ?>
                         <meta http-equiv="refresh" content="0; URL=menuAdmin.php" />
                     <?php
